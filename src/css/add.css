@@ -1,0 +1,101 @@
+.addmain{
+    height:100vh;
+display:flex;
+justify-content:center;
+align-items: center;
+color:rgba(0, 0, 0, 0.663);
+
+}
+.addmain .form{
+background-color: var(--secondary-color);
+padding:20px 30px;
+border-radius:12px;
+/* align-items: center; */
+/* text-align: center; */
+}
+.addmain h1{
+    color:var(--font-color);
+    font-size: 1.5rem;
+    font-weight: 1000;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.addmain .row1,.addmain .row2{
+    display:flex;
+    padding:10px 0;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.addmain .type,.addmain .amnt,.addmain .date,.addmain .catg{
+    display:flex;
+    flex-direction: column;
+}
+.amnt{
+    width:40%;
+    /* height: 10px; */
+}
+.amnt input{
+    height:15px;
+}
+label{
+    margin-bottom: 3px;
+}
+select {
+    color:black;
+    background: none;
+}
+option{
+    color:black;
+    background: none;
+    
+}
+input{
+    background: none;
+    border-bottom: 1px solid black;
+}
+#amnt{
+    /* width:50%; */
+
+}
+.addmain .footer{
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addmain .btn{
+    text-align: center;
+    background-color: var(--sixth-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color:black;
+    
+}
+@media (max-width: 560px) {
+    .addmain .form{
+        padding:20px 5px;
+    }
+}
+@media (max-width: 500px) {
+    .addmain{
+        height:85vh;
+    }
+    .addmain .form{
+        padding:20px 15px;
+    }
+}
+@media (max-width: 390px) {
+    .addmain .form{
+        padding:20px 30px;
+    }
+    .addmain .row1,.addmain .row2{
+        display: block;
+        padding:  0;
+    }
+    .addmain .catg,.addmain .amnt, .addmain .date, .addmain .type{
+        margin-bottom: 5px;
+    }
+}

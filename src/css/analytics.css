@@ -1,0 +1,30 @@
+.analmain{
+    margin:20px 0;
+}
+.analmain .pichart{
+    /* min-width: 120px; */
+    display: flex;
+    max-width: 450px;
+    justify-content: center;
+    align-items: center;
+}
+.analmain .btn{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin:12px 20px;
+}
+.analmain .incbtn{
+background-color: var(--card-color);
+width:48vw;
+margin-right: 2px;
+border-radius: 5px;
+padding:6px 0;
+text-align: center;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.analmain .active{
+    background-color: var(--fifth-color);
+    color:var(--font-color);
+    font-weight: 700; 
+}

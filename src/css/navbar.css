@@ -1,0 +1,154 @@
+nav {
+  background-color: var(--card-color);
+  height: 100%;
+  /* min-height: 450px;; */
+  width: 200px;
+  position: fixed;
+  /* position: sticky; */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  /* overflow-y: */
+  /* overflow-y: scroll; */
+  padding: 25px 10px;
+  padding-top: 50px;
+}
+nav .icon {
+  position: absolute;
+  color: var(--primary-color);
+  top: 7px;
+  left: 7px;
+}
+nav .container {
+}
+nav .profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+nav .userphoto {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--third-color);
+}
+nav .username {
+  color: var(--font-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+nav .routelink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+nav .link {
+  margin: 5px 0;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+}
+nav .link:hover {
+  color: var(--fourth-color);
+  font-size: 1.1rem;
+}
+nav .foot {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+nav .btmadd {
+    display: none;
+}
+nav .luiicon {
+  margin: 0 10px;
+  color: var(--third-color);
+}
+@media (max-height: 450px) {
+nav .foot {
+    position:relative;
+    bottom: auto;
+}
+nav .routelink {
+    margin-top: 10px;
+}
+nav::-webkit-scrollbar{
+    display: none;
+}
+}
+@media (max-width: 500px) {
+  nav {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    position: relative;
+  }
+  nav.main {
+    padding: 12px;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  nav .icon {
+    position: relative;
+  }
+  nav .profile {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  nav .userphoto {
+    width: 45px;
+    height: 45px;
+  }
+  nav .username {
+  
+   font-size: 1rem;
+    margin-left:12px;
+}
+  nav .container {
+    /* display: inline-flex; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* justify-content: space-between; */
+  }
+  nav .routelink {
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: var(--card-color);
+    /* margin-left: -50px; */
+  }
+  nav .foot {
+    position: relative;
+    bottom: auto;
+    display: block;
+  }
+  nav .spanname{
+    display: none;
+  }
+  nav .btmadd {
+   
+    display: block;
+
+}
+nav .btmadd .luiicon{
+    background-color: var(--sixth-color);
+    border-radius: 50%;
+    /* margin:20px; */
+    color:black;
+}
+nav .add{
+    display: none;
+}
+nav .luiicon {
+    margin: 0;
+    height:35px;
+    width: 35px;
+}
+}
