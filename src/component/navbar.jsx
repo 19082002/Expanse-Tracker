@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="icon">
         <span>
       {/* <img src="./images/icn.png" alt="icon" /> */}
-      expanse</span>
+      expense</span>
       </div>
       <div className="profile">
                 <img src="./images/kids.jpeg" alt="user photo" className="userphoto"/>

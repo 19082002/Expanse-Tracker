@@ -34,7 +34,7 @@ export default function Home() {
       <div className="item">
         <p>{item.category}</p>
         <p>{item.amount}</p>
-        <p className="expanse">{item.type}</p>
+        <p className="expense">{item.type}</p>
         <div className="btn">
           <button>
             <Pencil className="luiicon" />
