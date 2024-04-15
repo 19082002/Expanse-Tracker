@@ -38,7 +38,7 @@ border-radius:12px;
     /* height: 10px; */
 }
 .amnt input{
-    height:15px;
+    height:20px;
 }
 label{
     margin-bottom: 3px;
@@ -74,9 +74,10 @@ input{
     color:black;
     
 }
-@media (max-width: 560px) {
+@media (max-width: 570px) {
     .addmain .form{
-        padding:20px 5px;
+        padding:20px 1px;
+        min-width: 320px;
     }
 }
 @media (max-width: 500px) {
@@ -90,12 +91,13 @@ input{
 @media (max-width: 390px) {
     .addmain .form{
         padding:20px 30px;
+        width:98vw;
     }
     .addmain .row1,.addmain .row2{
         display: block;
         padding:  0;
     }
     .addmain .catg,.addmain .amnt, .addmain .date, .addmain .type{
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 }

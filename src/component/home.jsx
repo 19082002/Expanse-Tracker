@@ -1,6 +1,5 @@
 import "../css/home.css";
-import { useSelector, useDispatch } from "react-redux";
-import { incnum, additem } from "../actions/index";
+import { useSelector } from "react-redux";
 import {
   Trash2,
   Pencil,
@@ -9,15 +8,28 @@ import {
   IndianRupee,
 } from "lucide-react";
 
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 export default function Home() {
   const total = useSelector((state) => state.totalmoney);
-  const balance = useSelector((state) => state.monthSave).save;
-  console.log('total',balance)
   const dayitem = useSelector((state) => state.totalItem);
-
+  var count=2; 
   const Showitem = (items) => {
     var item = items.items;
-    console.log("Show", item);
+    // console.log("Show", item);
     return (
       <div className="item">
         <p>{item.category}</p>
@@ -69,14 +81,19 @@ export default function Home() {
               <div className="head">
                 {dayitem &&
                   dayitem.map((elem) => {
-                    // console.log(i.id)
+                    
+                    console.log('cnt',count)
                     // var item=items.items.item
-                    if (elem.id == "2024-04-08") {
+                    var mn=months[(parseInt(elem.id[5])*10 )+parseInt(elem.id[6])-1];
+                    var dt=(parseInt(elem.id[8])*10 )+parseInt(elem.id[9]);
+                    if (count>0) {
+                      count-=1
                       return (
+                       
                         <>
-                          <p>Today</p>
+                          <p> {dt} {mn}</p>
                           {elem.items.map((item) => {
-                            console.log("itm", item);
+                            // console.log("itm", item);
                             return (
                               <>
                                 <Showitem items={item} />
@@ -85,8 +102,8 @@ export default function Home() {
                           })}
                         </>
                       );
+                     
                     }
-                    // if(cnt==1)break;
                   })}
               </div>
             </div>

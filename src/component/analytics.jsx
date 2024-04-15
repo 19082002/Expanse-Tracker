@@ -1,19 +1,25 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useState } from "react";
 import { Pie } from "react-chartjs-2";
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import "../css/analytics.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
-
 export default function Analytics() {
-  const exbalance = (useSelector((state) => state.monthSave)).expense;
-    console.log('expense',exbalance)
-    const inbalance = (useSelector((state) => state.monthSave)).income;
-    console.log('expense',exbalance)
+  const [type, setType] = useState("income");
+  const dayitem = useSelector((state) => state.totalItem);
+  const exbalance = useSelector((state) => state.monthSave).expense;
+  const inbalance = useSelector((state) => state.monthSave).income;
+  const Showitem = (items) => {
+    var item = items.items;
+    return (
+      <div className="item">
+        <p>{item.category}</p>
+        <p className="price">{item.amount}</p>
+      </div>
+    );
+  };
   const dataexpense = {
-    
     labels: [
       "Bill",
       "Car",
@@ -28,7 +34,17 @@ export default function Analytics() {
     datasets: [
       {
         label: "Expense",
-        data: [exbalance[0], exbalance[1], exbalance[2],exbalance[3], exbalance[4],exbalance[5], exbalance[6], exbalance[7], exbalance[8]],
+        data: [
+          exbalance[0],
+          exbalance[1],
+          exbalance[2],
+          exbalance[3],
+          exbalance[4],
+          exbalance[5],
+          exbalance[6],
+          exbalance[7],
+          exbalance[8],
+        ],
         backgroundColor: [
           "rgb(241, 147, 152)",
           "rgb(162, 234, 234)",
@@ -66,7 +82,16 @@ export default function Analytics() {
     datasets: [
       {
         label: "Income",
-        data: [inbalance[0], inbalance[1], inbalance[2],inbalance[3], inbalance[4],inbalance[5], inbalance[6], inbalance[7]],
+        data: [
+          inbalance[0],
+          inbalance[1],
+          inbalance[2],
+          inbalance[3],
+          inbalance[4],
+          inbalance[5],
+          inbalance[6],
+          inbalance[7],
+        ],
         backgroundColor: [
           "rgb(241, 147, 152)",
           "rgb(162, 234, 234)",
@@ -90,36 +115,62 @@ export default function Analytics() {
       },
     ],
   };
-  
-  const [data,setData]=useState(dataincome);
-  const [click1,setClick1]=useState(true);
-  const [click2,setClick2]=useState(false);
-  const btnclick=(e)=>{
-    if(e=="exc"){
+
+  const [data, setData] = useState(dataincome);
+  const [click1, setClick1] = useState(true);
+  const [click2, setClick2] = useState(false);
+  const btnclick = (e) => {
+    if (e == "exc") {
       setData(dataexpense);
       setClick2(true);
       setClick1(false);
+      setType("expense");
+    } else {
+      setType("income");
+      setData(dataincome);
+      setClick1(true);
+      setClick2(false);
     }
-   
-  else {
-    setData(dataincome)
-  setClick1(true);
-  setClick2(false);
-  }
-  }
+  };
   return (
     <div className="componentmain">
       <div className="analmain">
-      <div className="pichart">
-        <Pie data={data} />
+        <div className="pichart">
+          <Pie data={data} />
         </div>
-        {/* <Pie data={dataexpense} /> */}
         <div className="btn">
-        <button className={`incbtn ${click1 && 'active'}`} onClick={()=>btnclick("inc")}>Income</button>
-        <button  className={`incbtn ${click2 && 'active'}`} onClick={()=>btnclick("exc")}>Expense</button>
+          <button
+            className={`incbtn ${click1 && "active"}`}
+            onClick={() => btnclick("inc")}
+          >
+            Income
+          </button>
+          <button
+            className={`incbtn ${click2 && "active"}`}
+            onClick={() => btnclick("exc")}
+          >
+            Expense
+          </button>
         </div>
+        <div className="content">
+          {dayitem &&
+            dayitem.map((elem) => {
+              if (elem.items[0].type == type) {
+                return (
+                  <>
+                    {elem.items.map((item) => {
+                      return (
+                        <>
+                          <Showitem items={item} />
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              }
+            })}
         </div>
-      
+      </div>
     </div>
   );
 }
