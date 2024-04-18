@@ -55,7 +55,6 @@ const labels = [
 
 export default function Stats() {
   const balance = useSelector((state) => state.monthSave).save;
-  console.log("total", balance);
   const data = {
     labels,
     datasets: [

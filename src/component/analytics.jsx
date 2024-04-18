@@ -1,6 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useState } from "react";
-import { Pie } from "react-chartjs-2";
+import { useState, useEffect } from "react";
+import { Pie, Doughnut } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import "../css/analytics.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -10,6 +10,7 @@ export default function Analytics() {
   const dayitem = useSelector((state) => state.totalItem);
   const exbalance = useSelector((state) => state.monthSave).expense;
   const inbalance = useSelector((state) => state.monthSave).income;
+  
   const Showitem = (items) => {
     var item = items.items;
     return (
@@ -45,6 +46,17 @@ export default function Analytics() {
           exbalance[7],
           exbalance[8],
         ],
+        borderColor: [
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+        ],
         backgroundColor: [
           "rgb(241, 147, 152)",
           "rgb(162, 234, 234)",
@@ -55,14 +67,6 @@ export default function Analytics() {
           "rgb(166, 12, 166)",
           "rgb(25, 159, 64)",
           "rgb(100, 23, 24)",
-        ],
-        borderColor: [
-          // 'rgba(255, 99, 255)',
-          // 'rgba(54, 162, 235, 0.2)',
-          // 'rgba(255, 206, 86, 0.2)',
-          // 'rgba(75, 192, 192, 0.2)',
-          // 'rgba(153, 102, 255, 0.2)',
-          // 'rgba(255, 159, 64, 0.2)',
         ],
         borderWidth: 2,
       },
@@ -92,6 +96,17 @@ export default function Analytics() {
           inbalance[6],
           inbalance[7],
         ],
+        borderColor: [
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+          "rgb(14, 13, 13)",
+        ],
         backgroundColor: [
           "rgb(241, 147, 152)",
           "rgb(162, 234, 234)",
@@ -103,19 +118,10 @@ export default function Analytics() {
           "rgba(25, 159, 64, 1)",
           "rgb(100, 23, 24)",
         ],
-        borderColor: [
-          // 'rgba(255, 99, 255)',
-          // 'rgba(54, 162, 235, 0.2)',
-          // 'rgba(255, 206, 86, 0.2)',
-          // 'rgba(75, 192, 192, 0.2)',
-          // 'rgba(153, 102, 255, 0.2)',
-          // 'rgba(255, 159, 64, 0.2)',
-        ],
         borderWidth: 2,
       },
     ],
   };
-
   const [data, setData] = useState(dataincome);
   const [click1, setClick1] = useState(true);
   const [click2, setClick2] = useState(false);
@@ -136,7 +142,7 @@ export default function Analytics() {
     <div className="componentmain">
       <div className="analmain">
         <div className="pichart">
-          <Pie data={data} />
+          <Doughnut data={data} />
         </div>
         <div className="btn">
           <button
@@ -155,19 +161,19 @@ export default function Analytics() {
         <div className="content">
           {dayitem &&
             dayitem.map((elem) => {
-              if (elem.items[0].type == type) {
-                return (
-                  <>
-                    {elem.items.map((item) => {
+              return (
+                <>
+                  {elem.items.map((item) => {
+                    if (item.type === type) {
                       return (
                         <>
                           <Showitem items={item} />
                         </>
                       );
-                    })}
-                  </>
-                );
-              }
+                    }
+                  })}
+                </>
+              );
             })}
         </div>
       </div>

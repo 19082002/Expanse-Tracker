@@ -12,7 +12,7 @@ export default function Navbar() {
       expense</span>
       </div>
       <div className="profile">
-                <img src="./images/kids.jpeg" alt="user photo" className="userphoto"/>
+                <img src="./images/profilepic.png" alt="user photo" className="userphoto"/>
                 <p className="username">Hey ssd</p>
             </div>
         <div className="container">

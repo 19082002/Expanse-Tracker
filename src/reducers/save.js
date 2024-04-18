@@ -26,6 +26,18 @@ const monthSave = (state = graph, action) => {
                 state.expense[type] = state.expense[type]+amnt
                 return state
             }
+            case "DELINCR": {
+                // console.log('state', state);
+                state.save[month] = state.save[month] - amnt;
+                state.income[type] = state.income[type]-amnt;
+                return state
+            }
+            case "DELDECR": {
+                // console.log('state', state);
+                state.save[month] = state.save[month] + amnt;
+                state.expense[type] = state.expense[type]-amnt
+                return state
+            }
             default: return state;
         }
     }

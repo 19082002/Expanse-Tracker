@@ -1,5 +1,5 @@
 import "../css/home.css";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 import {
   Trash2,
   Pencil,
@@ -7,8 +7,8 @@ import {
   TrendingDown,
   IndianRupee,
 } from "lucide-react";
-
-
+import { useEffect, useState } from "react";
+import {removeitem,deldecr,delex,delinc,delincr} from "../actions/index"
 const months = [
   "January",
   "February",
@@ -27,6 +27,25 @@ export default function Home() {
   const total = useSelector((state) => state.totalmoney);
   const dayitem = useSelector((state) => state.totalItem);
   var count=2; 
+  // var flag = false;
+  const [flag,setFlag]=useState(false)
+  const dispatch = useDispatch();
+  useEffect(() => {
+setFlag(false)
+  }, [flag])
+  const goto = (item) => {
+      const month = item.date[5] + item.date[6];
+      if (item.type == "expense") {
+        dispatch(delex(parseInt(item.amount)));
+        dispatch(deldecr(parseInt(item.amount), parseInt(month), parseInt(item.category)));
+      } else {
+        dispatch(delincr(parseInt(item.amount), parseInt(month), parseInt(item.category)));
+        dispatch(delinc(parseInt(item.amount)));
+       
+      }
+      dispatch(removeitem(item));
+      setFlag(true);
+  };
   const Showitem = (items) => {
     var item = items.items;
     // console.log("Show", item);
@@ -36,10 +55,10 @@ export default function Home() {
         <p>{item.amount}</p>
         <p className="expense">{item.type}</p>
         <div className="btn">
-          <button>
+          {/* <button>
             <Pencil className="luiicon" />
-          </button>
-          <button>
+          </button> */}
+          <button onClick={()=>{ goto(item)}}>
             <Trash2 className="luiicon" />
           </button>
         </div>

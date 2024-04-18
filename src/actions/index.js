@@ -10,6 +10,18 @@ export const decnum=(value)=>{
         payload:value
     }
 }
+export const delex=(value)=>{
+    return {
+        type:"DELEX",
+        payload:value
+    }
+}
+export const delinc=(value)=>{
+    return {
+        type:"DELINC",
+        payload:value
+    }
+}
 export const incr=(val,date,catg)=>{
     return {
         type:"INCR",
@@ -22,6 +34,18 @@ export const decr=(val,date,catg)=>{
         payload:{val,date,catg}
     }
 }
+export const delincr=(val,date,catg)=>{
+    return {
+        type:"DELINCR",
+        payload:{val,date,catg}
+    }
+}
+export const deldecr=(val,date,catg)=>{
+    return {
+        type:"DELDECR",
+        payload:{val,date,catg}
+    }
+}
 export const additem=(item)=>{
     return {
         type:"ADD",
@@ -30,7 +54,7 @@ export const additem=(item)=>{
 }
 export const removeitem=(item)=>{
     return {
-        type:"REMOVE",
+        type:"DELETE",
         payload : item
     }
 

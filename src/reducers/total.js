@@ -13,6 +13,16 @@ const balance={total:0,income:0,expense:0};
             state.expense=state.expense+value;
             return state
         }
+        case "DELINC":{
+            state.total=state.total-value;
+            state.income=state.income-value;
+            return state
+        }
+        case "DELEX":{
+            state.total=state.total+value;
+            state.expense=state.expense-value;
+            return state
+        }
         default: return state;
     }
 }
