@@ -3,7 +3,8 @@ import Home from "./home";
 import { useSelector, useDispatch } from "react-redux";
 import { incnum, additem, decnum, incr, decr } from "../actions/index";
 import { useEffect, useState } from "react";
-import { Form } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 let expensetype = [
   "Bill",
@@ -122,6 +123,8 @@ console.log(flag)
               </div>
             </div>
             <div className="footer">
+            <Link
+            to="/">
               <button
                 onClick={() => {
                   goto();
@@ -130,6 +133,7 @@ console.log(flag)
               >
                 Submit
               </button>
+              </Link>
             </div>
           {/* </form> */}
         </div>

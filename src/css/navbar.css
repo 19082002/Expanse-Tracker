@@ -1,16 +1,12 @@
 nav {
   background-color: var(--card-color);
   height: 100%;
-  /* min-height: 450px;; */
   width: 200px;
   position: fixed;
-  /* position: sticky; */
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
-  /* overflow-y: */
-  /* overflow-y: scroll; */
   padding: 25px 10px;
   padding-top: 50px;
 }
@@ -19,6 +15,9 @@ nav .icon {
   color: var(--primary-color);
   top: 7px;
   left: 7px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px rgb(151, 105, 151);
 }
 nav .container {
 }
@@ -44,12 +43,14 @@ nav .routelink {
   flex-direction: column;
   justify-content: center;
   margin-top: 50px;
+  
 }
 nav .link {
   margin: 5px 0;
   display: inline-flex;
   align-items: center;
   font-weight: 500;
+  padding: 5px 0;
 }
 nav .link:hover {
   color: var(--fourth-color);
