@@ -1,103 +1,100 @@
-.homemain .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    
+.homemain .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.homemain .card{
-    background: var(--secondary-color);
-    padding:12px 20px;
-    border-radius:20px;
-    color:black;
-    min-width: 250px;
-    box-shadow: 1.5px 1.5px 1.5px 2px white;
+.homemain .card {
+  background: var(--secondary-color);
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: black;
+  min-width: 250px;
+  box-shadow: 1.5px 1.5px 1.5px 2px white;
 }
-.homemain .card .balance .head{
-    font-size: 1.3rem;
-    color:var(--fifth-color);
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 1px 1px 1px black;
-    /* font-style: oblique; */
-
+.homemain .card .balance .head {
+  font-size: 1.3rem;
+  color: var(--fifth-color);
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 1px black;
+  /* font-style: oblique; */
 }
-.homemain .balance .blnc{
-    color:var(--font-color);
-    font-weight: 800;
-    font-size: 1.1rem;
-    /* text-shadow: 1px 1px 0.5px rgb(47, 45, 45); */
+.homemain .balance .blnc {
+  color: var(--font-color);
+  font-weight: 800;
+  font-size: 1.1rem;
+  /* text-shadow: 1px 1px 0.5px rgb(47, 45, 45); */
 }
-.homemain .row{
-    display:flex;
-    justify-content: space-between;
-    margin-top:20px;
+.homemain .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-.homemain .row .head{
-    font-weight: 700;
+.homemain .row .head {
+  font-weight: 700;
 }
-.homemain .row .blnc{
-    text-align: center;
-    color:var(--fourth-color);
-    font-weight: 500;
-    text-shadow: 0.5px 0.5px 1px rgb(88, 2, 2);
+.homemain .row .blnc {
+  text-align: center;
+  color: var(--fourth-color);
+  font-weight: 500;
+  text-shadow: 0.5px 0.5px 1px rgb(88, 2, 2);
 }
 .card .luiicon {
-    /* margin: 0 5px; */
-    color: var(--font-color);
-  }
+  /* margin: 0 5px; */
+  color: var(--font-color);
+}
 
-  .card .blnc{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+.card .blnc {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
-.homemain .analyse{
-    max-width: 800px;
-    min-width: 500px;
-    /* margin: 20px 10px; */
-    
-    padding:12px 20px;
+.homemain .analyse {
+  max-width: 800px;
+  min-width: 500px;
+  /* margin: 20px 10px; */
+
+  padding: 12px 20px;
 }
-.homemain .analyse .item{
-display: flex;
-justify-content: space-between;
-background-color: var(--card-color);
-padding:9px 12px;
-margin: 10px 0;
-margin-left: 20px;
-border: 1px solid rgb(51, 51, 51);
-border-radius: 10px;
+.homemain .analyse .item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--card-color);
+  padding: 9px 12px;
+  margin: 10px 0;
+  margin-left: 20px;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 10px;
 }
-.homemain .analyse .item .expense{
-    color:var(--primary-color);
+.homemain .analyse .item .expense {
+  color: var(--primary-color);
 }
 .homemain .analyse .item .luiicon {
-    margin: 0 5px;
-    color: var(--third-color);
-  }
+  margin: 0 5px;
+  color: var(--third-color);
+}
 
-  @media (max-width: 665px) {
-    .homemain .analyse{
-        min-width: 350px;
-    }
+@media (max-width: 665px) {
+  .homemain .analyse {
+    min-width: 350px;
   }
-  @media (max-width: 500px) {
-    .homemain .analyse{
-        min-width: 95vw;
-    }
-    .homemain .analyse .item{
-        margin-left: 10px;
-    }
+}
+@media (max-width: 500px) {
+  .homemain .analyse {
+    min-width: 95vw;
   }
-  @media (max-width: 310px) {
-    .homemain .analyse{
-        min-width: 100vw;
-    }
-    .homemain .analyse .item{
-        margin-left: 5px;
-    }
-   
+  .homemain .analyse .item {
+    margin-left: 10px;
   }
+}
+@media (max-width: 310px) {
+  .homemain .analyse {
+    min-width: 100vw;
+  }
+  .homemain .analyse .item {
+    margin-left: 5px;
+  }
+}

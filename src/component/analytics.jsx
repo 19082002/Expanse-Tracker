@@ -1,6 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useState, useEffect } from "react";
-import { Pie, Doughnut } from "react-chartjs-2";
+import { useState } from "react";
+import { Doughnut } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import "../css/analytics.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -10,7 +10,7 @@ export default function Analytics() {
   const dayitem = useSelector((state) => state.totalItem);
   const exbalance = useSelector((state) => state.monthSave).expense;
   const inbalance = useSelector((state) => state.monthSave).income;
-  
+
   const Showitem = (items) => {
     var item = items.items;
     return (

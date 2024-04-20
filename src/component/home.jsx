@@ -1,14 +1,13 @@
 import "../css/home.css";
-import { useSelector ,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Trash2,
-  Pencil,
   TrendingUp,
   TrendingDown,
   IndianRupee,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import {removeitem,deldecr,delex,delinc,delincr} from "../actions/index"
+import { removeitem, deldecr, delex, delinc, delincr } from "../actions/index";
 const months = [
   "January",
   "February",
@@ -26,25 +25,28 @@ const months = [
 export default function Home() {
   const total = useSelector((state) => state.totalmoney);
   const dayitem = useSelector((state) => state.totalItem);
-  var count=2; 
+  var count = 2;
   // var flag = false;
-  const [flag,setFlag]=useState(false)
+  const [flag, setFlag] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
-setFlag(false)
-  }, [flag])
+    setFlag(false);
+  }, [flag]);
   const goto = (item) => {
-      const month = item.date[5] + item.date[6];
-      if (item.type == "expense") {
-        dispatch(delex(parseInt(item.amount)));
-        dispatch(deldecr(parseInt(item.amount), parseInt(month), parseInt(item.category)));
-      } else {
-        dispatch(delincr(parseInt(item.amount), parseInt(month), parseInt(item.category)));
-        dispatch(delinc(parseInt(item.amount)));
-       
-      }
-      dispatch(removeitem(item));
-      setFlag(true);
+    const month = item.date[5] + item.date[6];
+    if (item.type == "expense") {
+      dispatch(delex(parseInt(item.amount)));
+      dispatch(
+        deldecr(parseInt(item.amount), parseInt(month), parseInt(item.category))
+      );
+    } else {
+      dispatch(
+        delincr(parseInt(item.amount), parseInt(month), parseInt(item.category))
+      );
+      dispatch(delinc(parseInt(item.amount)));
+    }
+    dispatch(removeitem(item));
+    setFlag(true);
   };
   const Showitem = (items) => {
     var item = items.items;
@@ -58,7 +60,11 @@ setFlag(false)
           {/* <button>
             <Pencil className="luiicon" />
           </button> */}
-          <button onClick={()=>{ goto(item)}}>
+          <button
+            onClick={() => {
+              goto(item);
+            }}
+          >
             <Trash2 className="luiicon" />
           </button>
         </div>
@@ -83,7 +89,8 @@ setFlag(false)
                 <div>
                   <p className="head">Income </p>
                   <p className="blnc">
-                    {total.income}<TrendingUp className="luiicon" />
+                    {total.income}
+                    <TrendingUp className="luiicon" />
                   </p>
                 </div>
                 <div>
@@ -100,17 +107,21 @@ setFlag(false)
               <div className="head">
                 {dayitem &&
                   dayitem.map((elem) => {
-                    
-                    console.log('cnt',count)
+                    console.log("cnt", count);
                     // var item=items.items.item
-                    var mn=months[(parseInt(elem.id[5])*10 )+parseInt(elem.id[6])-1];
-                    var dt=(parseInt(elem.id[8])*10 )+parseInt(elem.id[9]);
-                    if (count>0) {
-                      count-=1
+                    var mn =
+                      months[
+                        parseInt(elem.id[5]) * 10 + parseInt(elem.id[6]) - 1
+                      ];
+                    var dt = parseInt(elem.id[8]) * 10 + parseInt(elem.id[9]);
+                    if (count > 0) {
+                      count -= 1;
                       return (
-                       
                         <>
-                          <p> {dt} {mn}</p>
+                          <p>
+                            {" "}
+                            {dt} {mn}
+                          </p>
                           {elem.items.map((item) => {
                             // console.log("itm", item);
                             return (
@@ -121,7 +132,6 @@ setFlag(false)
                           })}
                         </>
                       );
-                     
                     }
                   })}
               </div>

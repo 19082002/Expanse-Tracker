@@ -1,12 +1,12 @@
 // const 
-let graph={
-    save : [0,0,0,0,0,0,0,0,0,0,0,0],
-    income:[0,0,0,0,0,0,0,0,0],
-    expense:[0,0,0,0,0,0,0,0,0]
+let graph = {
+    save: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    income: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    expense: [0, 0, 0, 0, 0, 0, 0, 0, 0]
 }
 const item = JSON.parse(localStorage.getItem('graphs'));
 if (item) {
- graph=item
+    graph = item
 }
 const monthSave = (state = graph, action) => {
     const value = action.payload;
@@ -14,14 +14,14 @@ const monthSave = (state = graph, action) => {
     if (typeof value !== 'undefined') {
         // console.log('val', value);
         const amnt = value.val;
-        const month = value.date-1;
-        const type=value.catg;
+        const month = value.date - 1;
+        const type = value.catg;
 
         switch (action.type) {
             case "INCR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] + amnt;
-                state.income[type] = state.income[type]+amnt;
+                state.income[type] = state.income[type] + amnt;
                 localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
                 return state;
@@ -29,7 +29,7 @@ const monthSave = (state = graph, action) => {
             case "DECR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] - amnt;
-                state.expense[type] = state.expense[type]+amnt
+                state.expense[type] = state.expense[type] + amnt
                 localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
                 return state;
@@ -37,7 +37,7 @@ const monthSave = (state = graph, action) => {
             case "DELINCR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] - amnt;
-                state.income[type] = state.income[type]-amnt;
+                state.income[type] = state.income[type] - amnt;
                 localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
                 return state;
@@ -45,18 +45,18 @@ const monthSave = (state = graph, action) => {
             case "DELDECR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] + amnt;
-                state.expense[type] = state.expense[type]-amnt
+                state.expense[type] = state.expense[type] - amnt
                 localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
                 return state;
             }
             default: localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
-                return state;;
+                return state;
         }
     }
     else localStorage.removeItem('graphs')
-                localStorage.setItem('items', JSON.stringify(state));
-                return state;;
+    localStorage.setItem('graphs', JSON.stringify(state));
+    return state;
 }
 export default monthSave;

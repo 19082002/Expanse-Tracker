@@ -1,7 +1,7 @@
 let items = [];
 const item = JSON.parse(localStorage.getItem('items'));
 if (item) {
- items=item
+    items = item
 }
 const totalItem = (state = items, action) => {
     const item = action.payload;
@@ -24,7 +24,7 @@ const totalItem = (state = items, action) => {
             if (flag) {
 
                 if (state.length == 0) {
-                    state= [
+                    state = [
                         {
                             id: item.date,
                             items: [item]
@@ -66,7 +66,7 @@ const totalItem = (state = items, action) => {
                     }
 
                     state.push(temp);
-                    
+
                 }
                 localStorage.removeItem('items')
                 localStorage.setItem('items', JSON.stringify(state));
@@ -79,11 +79,11 @@ const totalItem = (state = items, action) => {
         case "DELETE": {
             state.map((e) => {
                 e.items = e.items.filter((it) => {
-                
+
                     return it !== item ? item : null
                 })
             })
-            
+
             return state;
         }
 

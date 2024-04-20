@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-// import{nav}
 import "../css/navbar.css";
 import {
   Home,
@@ -15,9 +14,7 @@ export default function Navbar() {
     <>
       <nav className="main">
         <div className="icon">
-          <span>
-         TRACKER
-          </span>
+          <span>TRACKER</span>
         </div>
         <div className="profile">
           <img
@@ -32,7 +29,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               style={({ isActive }) => ({
-                color:isActive ? "rgb(166, 12, 166)" : "",
+                color: isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"
@@ -43,7 +40,7 @@ export default function Navbar() {
             <NavLink
               to="/stats"
               style={({ isActive }) => ({
-                color:isActive ? "rgb(166, 12, 166)" : "",
+                color: isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"
@@ -54,7 +51,7 @@ export default function Navbar() {
             <NavLink
               to="/add"
               style={({ isActive }) => ({
-                color:isActive ? "rgb(166, 12, 166)" : "",
+                color: isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="btmadd link"
@@ -64,7 +61,7 @@ export default function Navbar() {
             <NavLink
               to="/analytics"
               style={({ isActive }) => ({
-                color:isActive ? "rgb(166, 12, 166)" : "",
+                color: isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"
@@ -79,10 +76,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className="foot">
-          <NavLink
-            to="/add"
-            className="add link"
-          >
+          <NavLink to="/add" className="add link">
             <CirclePlus className="luiicon" />
             <span className="spanname">Add New</span>
           </NavLink>

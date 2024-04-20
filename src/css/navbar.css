@@ -15,7 +15,8 @@ nav .icon {
   color: var(--primary-color);
   top: 7px;
   left: 7px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 900;
   text-shadow: 1px 1px 1px rgb(151, 105, 151);
 }
@@ -43,7 +44,6 @@ nav .routelink {
   flex-direction: column;
   justify-content: center;
   margin-top: 50px;
-  
 }
 nav .link {
   margin: 5px 0;
@@ -63,23 +63,23 @@ nav .foot {
   flex-direction: column;
 }
 nav .btmadd {
-    display: none;
+  display: none;
 }
 nav .luiicon {
   margin: 0 10px;
   color: var(--third-color);
 }
 @media (max-height: 450px) {
-nav .foot {
-    position:relative;
+  nav .foot {
+    position: relative;
     bottom: auto;
-}
-nav .routelink {
+  }
+  nav .routelink {
     margin-top: 10px;
-}
-nav::-webkit-scrollbar{
+  }
+  nav::-webkit-scrollbar {
     display: none;
-}
+  }
 }
 @media (max-width: 500px) {
   nav {
@@ -105,10 +105,9 @@ nav::-webkit-scrollbar{
     height: 45px;
   }
   nav .username {
-  
-   font-size: 1rem;
-    margin-left:12px;
-}
+    font-size: 1rem;
+    margin-left: 12px;
+  }
   nav .container {
     /* display: inline-flex; */
     position: fixed;
@@ -129,27 +128,25 @@ nav::-webkit-scrollbar{
     bottom: auto;
     display: block;
   }
-  nav .spanname{
+  nav .spanname {
     display: none;
   }
   nav .btmadd {
-   
     display: block;
-
-}
-nav .btmadd .luiicon{ 
+  }
+  nav .btmadd .luiicon {
     background-color: var(--sixth-color);
     border-radius: 50%;
     /* margin:20px; */
-    color:black;
-}
-nav .add{
+    color: black;
+  }
+  nav .add {
     display: none;
-}
-nav .luiicon {
+  }
+  nav .luiicon {
     margin: 0;
     padding: 8px;
-    height:45px;
+    height: 45px;
     width: 45px;
-}
+  }
 }

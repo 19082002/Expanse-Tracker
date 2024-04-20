@@ -1,10 +1,8 @@
 import "../css/add.css";
-import Home from "./home";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { incnum, additem, decnum, incr, decr } from "../actions/index";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 
 let expensetype = [
   "Bill",
@@ -29,7 +27,7 @@ let incometype = [
 ];
 export default function Add() {
   const dispatch = useDispatch();
-  const [flag,setFlag]=useState(true)
+  const [flag, setFlag] = useState(true);
   const goto = () => {
     const type = document.getElementById("type").value;
     const catg = document.getElementById("cat").value;
@@ -79,9 +77,9 @@ export default function Add() {
     if (type == "income") setData(incometype);
     else setData(expensetype);
   };
-  useEffect(()=>{
-console.log(flag)
-  },)
+  useEffect(() => {
+    console.log(flag);
+  });
   return (
     <div className="componentmain">
       {/* welcome to the add */}
@@ -89,42 +87,41 @@ console.log(flag)
         <div className="form">
           <h1>Add new list</h1>
           {/* <form onSubmit={(ev) => ev.target.reset()}> */}
-            <div className="row1">
-              <div className="type">
-                <label htmlFor="type">Type </label>
-                <select name="type" id="type" onChange={() => btnclick()}>
-                  <option value="expense">Expense</option>
-                  <option value="income">Income</option>
-                </select>
-              </div>
-              <div className="catg">
-                <label htmlFor="category">Category</label>
-                <select name="category" id="cat">
-                  <option value="0">{data[0]}</option>
-                  <option value="1">{data[1]}</option>
-                  <option value="2">{data[2]}</option>
-                  <option value="3">{data[3]}</option>
-                  <option value="4">{data[4]}</option>
-                  <option value="5">{data[5]}</option>
-                  <option value="6">{data[6]}</option>
-                  <option value="7">{data[7]}</option>
-                  <option value="8">{data[8]}</option>
-                </select>
-              </div>
+          <div className="row1">
+            <div className="type">
+              <label htmlFor="type">Type </label>
+              <select name="type" id="type" onChange={() => btnclick()}>
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+              </select>
             </div>
-            <div className="row2">
-              <div className="date">
-                <label htmlFor="date">Date</label>
-                <input type="date" id="date" />
-              </div>
-              <div className="amnt">
-                <label htmlFor="amount">Amount</label>
-                <input type="number" required id="amnt" />
-              </div>
+            <div className="catg">
+              <label htmlFor="category">Category</label>
+              <select name="category" id="cat">
+                <option value="0">{data[0]}</option>
+                <option value="1">{data[1]}</option>
+                <option value="2">{data[2]}</option>
+                <option value="3">{data[3]}</option>
+                <option value="4">{data[4]}</option>
+                <option value="5">{data[5]}</option>
+                <option value="6">{data[6]}</option>
+                <option value="7">{data[7]}</option>
+                <option value="8">{data[8]}</option>
+              </select>
             </div>
-            <div className="footer">
-            <Link
-            to="/">
+          </div>
+          <div className="row2">
+            <div className="date">
+              <label htmlFor="date">Date</label>
+              <input type="date" id="date" />
+            </div>
+            <div className="amnt">
+              <label htmlFor="amount">Amount</label>
+              <input type="number" required id="amnt" />
+            </div>
+          </div>
+          <div className="footer">
+            <Link to="/">
               <button
                 onClick={() => {
                   goto();
@@ -133,8 +130,8 @@ console.log(flag)
               >
                 Submit
               </button>
-              </Link>
-            </div>
+            </Link>
+          </div>
           {/* </form> */}
         </div>
       </div>

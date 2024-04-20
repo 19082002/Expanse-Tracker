@@ -1,23 +1,23 @@
-.statmain{
-    display: flex;
-    flex-direction: column;
-    margin:12px 0;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.statmain {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.statmain .title{
-color:var(--secondary-color);
-font-size: 1.5rem;
-margin:15px 0;
+.statmain .title {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin: 15px 0;
 }
-.statmain .chart{
-    /* min-height: 80vh; */
-    display: flex;
-    /* min-width: none; */
-    max-width:450px;
-    width:90vw;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.statmain .chart {
+  /* min-height: 80vh; */
+  display: flex;
+  /* min-width: none; */
+  max-width: 450px;
+  width: 90vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

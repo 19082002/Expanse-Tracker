@@ -83,9 +83,7 @@ export default function Stats() {
     <div className="componentmain">
       {/* welcome to the stats */}
       <div className="statmain">
-        <p className="title">
-          Total Savings
-        </p>
+        <p className="title">Total Savings</p>
         <div className="chart">
           <Line options={options} data={data} />
         </div>

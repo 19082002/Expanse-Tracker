@@ -2,37 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    background: rgb(27, 26, 26);
-    --primary-color:#dbf574;
-    --secondary-color:rgb(162, 234, 234);
-    --third-color:rgb(222, 129, 246);
-    --fourth-color:rgb(241, 147, 152);
-    --fifth-color:rgb(250, 167, 85);
-    --sixth-color:rgb(110, 250, 113);
-    --card-color:rgb(14, 13, 13);
-    --font-color:rgb(166, 12, 166);
-    color:white;
-
+:root {
+  background: rgb(27, 26, 26);
+  --primary-color: #dbf574;
+  --secondary-color: rgb(162, 234, 234);
+  --third-color: rgb(222, 129, 246);
+  --fourth-color: rgb(241, 147, 152);
+  --fifth-color: rgb(250, 167, 85);
+  --sixth-color: rgb(110, 250, 113);
+  --card-color: rgb(14, 13, 13);
+  --font-color: rgb(166, 12, 166);
+  color: white;
 }
-*{
-    margin: 0;
-    padding: 0;
-   
+* {
+  margin: 0;
+  padding: 0;
 }
-.componentmain{
-    position: relative;
-    margin-left: 210px;
+.componentmain {
+  position: relative;
+  margin-left: 210px;
 }
 .luiicon {
-    width: 20px;
-    height:20px;
-  }
+  width: 20px;
+  height: 20px;
+}
 
 @media (max-width: 500px) {
-    .componentmain{
-        position: relative;
-        margin-left: 20px;
-    }
-    
+  .componentmain {
+    position: relative;
+    margin-left: 20px;
+  }
 }
