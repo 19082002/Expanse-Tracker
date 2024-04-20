@@ -4,14 +4,11 @@ display:flex;
 justify-content:center;
 align-items: center;
 color:rgba(0, 0, 0, 0.663);
-
 }
 .addmain .form{
 background-color: var(--secondary-color);
 padding:20px 30px;
 border-radius:12px;
-/* align-items: center; */
-/* text-align: center; */
 }
 .addmain h1{
     color:var(--font-color);
@@ -49,17 +46,15 @@ select {
 }
 option{
     color:black;
-    background: none;
-    
+    background: none; 
 }
 input{
     background: none;
     border-bottom: 1px solid black;
 }
-#amnt{
-    /* width:50%; */
-
-}
+input:focus{
+    outline: none;
+    }
 .addmain .footer{
     margin-top:20px;
     display: flex;

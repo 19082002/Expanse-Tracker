@@ -108,7 +108,7 @@ console.log(flag)
                   <option value="5">{data[5]}</option>
                   <option value="6">{data[6]}</option>
                   <option value="7">{data[7]}</option>
-                  <option value="8">{data[7]}</option>
+                  <option value="8">{data[8]}</option>
                 </select>
               </div>
             </div>

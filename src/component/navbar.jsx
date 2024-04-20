@@ -32,7 +32,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               style={({ isActive }) => ({
-                color:isActive ? "#7600dc" : "",
+                color:isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"
@@ -43,7 +43,7 @@ export default function Navbar() {
             <NavLink
               to="/stats"
               style={({ isActive }) => ({
-                color:isActive ? "#7600dc" : "",
+                color:isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"
@@ -54,7 +54,7 @@ export default function Navbar() {
             <NavLink
               to="/add"
               style={({ isActive }) => ({
-                color:isActive ? "#7600dc" : "",
+                color:isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="btmadd link"
@@ -64,7 +64,7 @@ export default function Navbar() {
             <NavLink
               to="/analytics"
               style={({ isActive }) => ({
-                color:isActive ? "#7600dc" : "",
+                color:isActive ? "rgb(166, 12, 166)" : "",
                 background: isActive ? "#dbf574" : "  ",
               })}
               className="link"

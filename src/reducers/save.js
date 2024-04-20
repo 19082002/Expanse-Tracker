@@ -1,8 +1,12 @@
 // const 
-const graph={
+let graph={
     save : [0,0,0,0,0,0,0,0,0,0,0,0],
     income:[0,0,0,0,0,0,0,0,0],
     expense:[0,0,0,0,0,0,0,0,0]
+}
+const item = JSON.parse(localStorage.getItem('graphs'));
+if (item) {
+ graph=item
 }
 const monthSave = (state = graph, action) => {
     const value = action.payload;
@@ -18,29 +22,41 @@ const monthSave = (state = graph, action) => {
                 // console.log('state', state);
                 state.save[month] = state.save[month] + amnt;
                 state.income[type] = state.income[type]+amnt;
-                return state
+                localStorage.removeItem('graphs')
+                localStorage.setItem('graphs', JSON.stringify(state));
+                return state;
             }
             case "DECR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] - amnt;
                 state.expense[type] = state.expense[type]+amnt
-                return state
+                localStorage.removeItem('graphs')
+                localStorage.setItem('graphs', JSON.stringify(state));
+                return state;
             }
             case "DELINCR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] - amnt;
                 state.income[type] = state.income[type]-amnt;
-                return state
+                localStorage.removeItem('graphs')
+                localStorage.setItem('graphs', JSON.stringify(state));
+                return state;
             }
             case "DELDECR": {
                 // console.log('state', state);
                 state.save[month] = state.save[month] + amnt;
                 state.expense[type] = state.expense[type]-amnt
-                return state
+                localStorage.removeItem('graphs')
+                localStorage.setItem('graphs', JSON.stringify(state));
+                return state;
             }
-            default: return state;
+            default: localStorage.removeItem('graphs')
+                localStorage.setItem('graphs', JSON.stringify(state));
+                return state;;
         }
     }
-    else return state;
+    else localStorage.removeItem('graphs')
+                localStorage.setItem('items', JSON.stringify(state));
+                return state;;
 }
 export default monthSave;

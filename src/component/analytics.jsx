@@ -17,6 +17,7 @@ export default function Analytics() {
       <div className="item">
         <p>{item.category}</p>
         <p className="price">{item.amount}</p>
+        <p className="date">{item.date}</p>
       </div>
     );
   };
@@ -64,9 +65,9 @@ export default function Analytics() {
           "rgb(222, 129, 246)",
           "rgb(250, 167, 85)",
           "rgb(110, 250, 113)",
-          "rgb(166, 12, 166)",
-          "rgb(25, 159, 64)",
-          "rgb(100, 23, 24)",
+          "rgb(249, 116, 196)",
+          "rgb(83, 244, 163)",
+          "rgb(166, 178, 245)",
         ],
         borderWidth: 2,
       },
@@ -114,9 +115,9 @@ export default function Analytics() {
           "rgb(222, 129, 246)",
           "rgb(250, 167, 85)",
           "rgb(110, 250, 113)",
-          "rgb(166, 12, 166)",
-          "rgba(25, 159, 64, 1)",
-          "rgb(100, 23, 24)",
+          "rgb(249, 116, 196)",
+          "rgb(83, 244, 163)",
+          "rgb(166, 178, 245)",
         ],
         borderWidth: 2,
       },

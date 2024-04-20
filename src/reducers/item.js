@@ -1,4 +1,8 @@
-const items = [];
+let items = [];
+const item = JSON.parse(localStorage.getItem('items'));
+if (item) {
+ items=item
+}
 const totalItem = (state = items, action) => {
     const item = action.payload;
 
@@ -11,7 +15,8 @@ const totalItem = (state = items, action) => {
                 if (e.id == item.date) {
                     flag = false;
                     e.items.push(item)
-
+                    localStorage.removeItem('items')
+                    localStorage.setItem('items', JSON.stringify(state));
                     return state;
                 }
             })
@@ -19,11 +24,11 @@ const totalItem = (state = items, action) => {
             if (flag) {
 
                 if (state.length == 0) {
-                    return [
+                    state= [
                         {
                             id: item.date,
                             items: [item]
-                        }, ...state
+                        }
                     ]
                 }
                 else {
@@ -61,9 +66,11 @@ const totalItem = (state = items, action) => {
                     }
 
                     state.push(temp);
-                    return state;
+                    
                 }
-
+                localStorage.removeItem('items')
+                localStorage.setItem('items', JSON.stringify(state));
+                return state;
 
             }
 
