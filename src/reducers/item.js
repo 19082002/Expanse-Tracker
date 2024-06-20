@@ -82,9 +82,16 @@ const totalItem = (state = items, action) => {
 
                     return it !== item ? item : null
                 })
+                
+                if(e.items.length==0)console.log("bvjf");
             })
-
-            return state;
+            state=state.filter((e) => {
+                return e.items.length ===0 ? null : e.items
+            })
+            console.log("after",state)
+            localStorage.removeItem('items')
+                localStorage.setItem('items', JSON.stringify(state));
+                return state;
         }
 
         default: return state;

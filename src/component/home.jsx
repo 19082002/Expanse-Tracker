@@ -34,14 +34,15 @@ export default function Home() {
   }, [flag]);
   const goto = (item) => {
     const month = item.date[5] + item.date[6];
+    console.log("gotocatg",item.catgval)
     if (item.type == "expense") {
       dispatch(delex(parseInt(item.amount)));
       dispatch(
-        deldecr(parseInt(item.amount), parseInt(month), parseInt(item.category))
+        deldecr(parseInt(item.amount), parseInt(month), parseInt(item.catgval))
       );
     } else {
       dispatch(
-        delincr(parseInt(item.amount), parseInt(month), parseInt(item.category))
+        delincr(parseInt(item.amount), parseInt(month), parseInt(item.catgval))
       );
       dispatch(delinc(parseInt(item.amount)));
     }
@@ -57,9 +58,6 @@ export default function Home() {
         <p>{item.amount}</p>
         <p className="expense">{item.type}</p>
         <div className="btn">
-          {/* <button>
-            <Pencil className="luiicon" />
-          </button> */}
           <button
             onClick={() => {
               goto(item);

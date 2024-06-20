@@ -55,6 +55,7 @@ export default function Add() {
             date: date,
             amount: parseInt(amnt),
             category: expensetype[parseInt(catg)],
+            catgval: parseInt(catg),
           })
         );
       } else {
@@ -66,6 +67,7 @@ export default function Add() {
             date: date,
             amount: parseInt(amnt),
             category: incometype[parseInt(catg)],
+            catgval: parseInt(catg),
           })
         );
       }

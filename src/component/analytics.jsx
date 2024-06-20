@@ -1,7 +1,9 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { removeitem, deldecr, delex, delinc, delincr } from "../actions/index";
+import {Trash2,} from "lucide-react";
 import "../css/analytics.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,6 +12,28 @@ export default function Analytics() {
   const dayitem = useSelector((state) => state.totalItem);
   const exbalance = useSelector((state) => state.monthSave).expense;
   const inbalance = useSelector((state) => state.monthSave).income;
+  const [flag, setFlag] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    setFlag(false);
+  }, [flag]);
+  const goto = (item) => {
+    const month = item.date[5] + item.date[6];
+    console.log("gotocatg",item.catgval)
+    if (item.type == "expense") {
+      dispatch(delex(parseInt(item.amount)));
+      dispatch(
+        deldecr(parseInt(item.amount), parseInt(month), parseInt(item.catgval))
+      );
+    } else {
+      dispatch(
+        delincr(parseInt(item.amount), parseInt(month), parseInt(item.catgval))
+      );
+      dispatch(delinc(parseInt(item.amount)));
+    }
+    dispatch(removeitem(item));
+    setFlag(true);
+  };
 
   const Showitem = (items) => {
     var item = items.items;
@@ -18,6 +42,15 @@ export default function Analytics() {
         <p>{item.category}</p>
         <p className="price">{item.amount}</p>
         <p className="date">{item.date}</p>
+        <div className="btn">
+          <button
+            onClick={() => {
+              goto(item);
+            }}
+          >
+            <Trash2 className="luiicon" />
+          </button>
+        </div>
       </div>
     );
   };
@@ -143,7 +176,8 @@ export default function Analytics() {
     <div className="componentmain">
       <div className="analmain">
         <div className="pichart">
-          <Doughnut data={data} />
+          {data === null ? "nill":
+          <Doughnut data={data} />}
         </div>
         <div className="btn">
           <button

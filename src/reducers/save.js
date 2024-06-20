@@ -1,13 +1,17 @@
 // const 
-let graph = {
-    save: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    income: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    expense: [0, 0, 0, 0, 0, 0, 0, 0, 0]
-}
+let graph 
 const item = JSON.parse(localStorage.getItem('graphs'));
 if (item) {
     graph = item
 }
+else{
+ graph = {
+    save: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    income: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    expense: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+}
+}
+
 const monthSave = (state = graph, action) => {
     const value = action.payload;
     // console.log('val', value);
@@ -48,6 +52,7 @@ const monthSave = (state = graph, action) => {
                 state.expense[type] = state.expense[type] - amnt
                 localStorage.removeItem('graphs')
                 localStorage.setItem('graphs', JSON.stringify(state));
+                console.log("expense", state)
                 return state;
             }
             default: localStorage.removeItem('graphs')
