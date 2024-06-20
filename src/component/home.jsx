@@ -116,9 +116,9 @@ export default function Home() {
                       count -= 1;
                       return (
                         <>
-                          <p>
+                          <p className="date">
                             {" "}
-                            {dt} {mn}
+                             {mn} {dt}
                           </p>
                           {elem.items.map((item) => {
                             // console.log("itm", item);

@@ -1,28 +1,27 @@
 import { useSelector } from "react-redux";
 import "../css/stat.css";
+
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
+} from 'chart.js';
+import { Bar } from "react-chartjs-2";
 // import faker from 'faker';
+
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
 );
-
 export const options = {
   responsive: true,
   plugins: {
@@ -85,7 +84,7 @@ export default function Stats() {
       <div className="statmain">
         <p className="title">Total Savings</p>
         <div className="chart">
-          <Line options={options} data={data} />
+          <Bar options={options} data={data} />
         </div>
       </div>
     </div>

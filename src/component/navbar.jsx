@@ -30,7 +30,7 @@ export default function Navbar() {
               to="/"
               style={({ isActive }) => ({
                 color: isActive ? "rgb(166, 12, 166)" : "",
-                background: isActive ? "#dbf574" : "  ",
+                background: isActive ? "rgba(144, 226, 43, 0.423)" : "  ",
               })}
               className="link"
             >
@@ -41,7 +41,7 @@ export default function Navbar() {
               to="/stats"
               style={({ isActive }) => ({
                 color: isActive ? "rgb(166, 12, 166)" : "",
-                background: isActive ? "#dbf574" : "  ",
+                background: isActive ? "rgba(144, 226, 43, 0.423)" : "  ",
               })}
               className="link"
             >
@@ -52,7 +52,7 @@ export default function Navbar() {
               to="/add"
               style={({ isActive }) => ({
                 color: isActive ? "rgb(166, 12, 166)" : "",
-                background: isActive ? "#dbf574" : "  ",
+                background: isActive ? "rgba(144, 226, 43, 0.423)" : "  ",
               })}
               className="btmadd link"
             >
@@ -62,7 +62,7 @@ export default function Navbar() {
               to="/analytics"
               style={({ isActive }) => ({
                 color: isActive ? "rgb(166, 12, 166)" : "",
-                background: isActive ? "#dbf574" : "  ",
+                background: isActive ? "rgba(144, 226, 43, 0.423)" : "  ",
               })}
               className="link"
             >
