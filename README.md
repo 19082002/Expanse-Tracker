@@ -1,5 +1,7 @@
 # React + Vite
 
+![image](https://github.com/19082002/Expense-Tracker/assets/76838248/46b80160-54cb-4839-9c5d-b36e11dc0592)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
